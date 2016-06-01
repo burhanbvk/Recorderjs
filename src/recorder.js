@@ -32,6 +32,10 @@ export class Recorder {
                 command: 'record',
                 buffer: buffer
             });
+            
+            if(undefined!==_this.config.ontimeupdate){
+                _this.config.ontimeupdate();
+            }
         };
 
         source.connect(this.node);
